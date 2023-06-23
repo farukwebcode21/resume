@@ -18,9 +18,9 @@ use Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Page Routes
 
@@ -42,6 +42,9 @@ Route::get('/experiencesData', [ResumeController::class, 'experiencesData']);
 Route::get('/educationData',[ResumeController::class, 'educationData'] );
 Route::get('/skillsData', [ResumeController::class, 'skillsData']);
 Route::get('languageData',[ResumeController::class, 'languageData']);
+
+Route::post('/contactRequest',[ContactController::class, 'contactRequest']);
+
 
 
 
