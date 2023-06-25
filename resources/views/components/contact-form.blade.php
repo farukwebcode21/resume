@@ -38,3 +38,26 @@
     </div>
     </div>
 </section>
+
+<script>
+    let contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (event) =>{
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        if(name.length === 0){
+            alert('Name is required')
+        }else if(email.length === 0){
+            alert('Rmail is required')
+        }else if(phone.length=== 0){
+            alert('Phone is required')
+        }else{
+            
+        }
+        
+    })
+</script>
