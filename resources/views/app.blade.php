@@ -14,8 +14,8 @@
 
 <body class="d-flex flex-column h-100">
 
-@include('components.navbar')
-@include('components.loader')
+    @include('components.navbar')
+    @include('components.loader')
 <div class="" id="content-div">
     @yield('content')
 </div>
