@@ -24,7 +24,7 @@
 </header>
 
 <script>
-    GetHeroData();
+GetHeroData();
     async function GetHeroData(){
             let res= await axios.get("/heroData");
             if(res.status===200){
@@ -34,4 +34,5 @@
                 document.getElementById('profileImg').src=res.data['profileImg']
             }
     }
+
 </script>

@@ -5,15 +5,8 @@
                 <h2 class="text-secondary fw-bolder mb-4">Languages</h2>
                 <div class="card shadow border-0 rounded-4 mb-5">
                     <div class="card-body p-5">
-                        <div class="row row-cols-1 row-cols-md-3 mb-4">
-                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div></div>
-                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>
-                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
-                        </div>
-                        <div class="row row-cols-1 row-cols-md-3">
-                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
-                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Ruby</div></div>
-                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.js</div></div>
+                        <div id="language-list" class="row row-cols-1 row-cols-md-3 mb-2">
+
                         </div>
                     </div>
                 </div>
@@ -21,3 +14,22 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    const LanguageList = async()=>{
+        try {
+            const response = await axios.get('/languageData');
+            response.data.forEach(item => {
+                document.getElementById('language-list').innerHTML+=(`
+                <div class="col mb-2"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100 mb-2">${item['name']}</div></div>
+                `)
+            });
+        } catch (error) {
+            alert(error);
+
+        }
+    }
+    LanguageList();
+
+</script>
